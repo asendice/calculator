@@ -1,0 +1,100 @@
+/* General App Styling */
+.App {
+  text-align: center;
+  background-color: #1a1a2e; /* Dark blue/purple background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Calculator container */
+.calculator {
+  background-color: #162447; /* Slightly lighter dark blue */
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3); /* Neon cyan glow */
+  border: 1px solid #00ffff; /* Neon cyan border */
+}
+
+/* Display Styling */
+.display {
+  background-color: #0f1a3a; /* Darker blue for display */
+  color: #00ffff; /* Neon cyan text */
+  font-size: 2.5em;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  text-align: right;
+  font-family: 'Orbitron', sans-serif; /* A futuristic font, fallback to sans-serif */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid #003333;
+  min-height: 50px; /* Ensure display has some height even when empty */
+}
+
+/* Keypad and Button Row Styling */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.keypad .row { /* This class is actually not used by the current Calculator.js grid, but keeping for potential future use or if generation was different */
+  display: contents; /* Allows buttons to be direct children of the grid */
+}
+
+/* Button Styling */
+button {
+  background-color: #1f4068; /* Deep blue */
+  color: #e0fbfc; /* Light cyan/white */
+  border: 2px solid #00ffff; /* Neon cyan border */
+  border-radius: 10px;
+  padding: 25px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Aldrich', sans-serif; /* Another futuristic font choice */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+button:hover {
+  background-color: #00ffff; /* Neon cyan */
+  color: #1a1a2e; /* Dark background color for text */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+button:active {
+  background-color: #00cccc; /* Slightly darker cyan for active state */
+  transform: scale(0.95);
+}
+
+/* Specific button types for different styling if needed */
+/* Example: Operator buttons */
+.keypad button:nth-child(4n), /* Every 4th button (operators in the current layout) */
+.keypad button:last-child /* The '+' button in the last row */ {
+  background-color: #e43f5a; /* A contrasting accent color - futuristic red/pink */
+  border-color: #ff5777;
+  color: white;
+}
+
+.keypad button:nth-child(4n):hover,
+.keypad button:last-child:hover {
+  background-color: #ff5777;
+  color: #1a1a2e;
+  box-shadow: 0 0 20px rgba(255, 87, 119, 0.7);
+}
+
+/* Example: Clear button */
+.keypad button:nth-child(14) /* Assuming 'C' is the 14th button (0-indexed) if they were flat; need to adjust if layout changes */
+ {
+  /* background-color: #ffA500; orange for clear, or keep consistent */
+}
+
+/* Example: Equals button */
+.keypad button:nth-child(15) /* Assuming '=' is the 15th button */
+{
+  /* background-color: #4caf50; green for equals, or keep consistent */
+}
